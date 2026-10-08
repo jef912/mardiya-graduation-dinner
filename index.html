@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Res Gestae Soirée Mardiya Iddriss</title>
+<meta name="description" content="Res Gestae Soirée: Indiya's Dinner at the Bar. Graduation dinner for Mardiya Iddriss, celebrating her graduation from Law School. Saturday, 17 October 2026, 5pm – 8pm at Pearly Gate Gardens.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+  :root{
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+    --wine:#5e1428; --wine-deep:#3f0c1b; --lime:#cfe84a; --lime-deep:#8aa313;
+    --bg:#faf6ef; --card:#fffdf8; --ink:#3a1220; --ink-soft:#6e4a55; --line:#e8d9d0;
+    --hero-text:#fbf3e8; --shadow:0 10px 36px rgba(63,12,27,.14);
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --bg:#1d0910; --card:#2a0f19; --ink:#f6ece4; --ink-soft:#d3b9bd; --line:#4a2230;
+      --lime-deep:#cfe84a; --shadow:0 10px 36px rgba(0,0,0,.4);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#1d0910; --card:#2a0f19; --ink:#f6ece4; --ink-soft:#d3b9bd; --line:#4a2230;
+    --lime-deep:#cfe84a; --shadow:0 10px 36px rgba(0,0,0,.4);
+  }
+  *,*::before,*::after{box-sizing:inherit;}
+  html{scroll-behavior:smooth; scroll-padding-top:env(safe-area-inset-top,0px);}
+  body{margin:0; background:var(--bg); color:var(--ink); font-family:'Cormorant Garamond',Georgia,serif; -webkit-font-smoothing:antialiased;}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important;}}
+
+  .eyebrow{font-family:'Cinzel',Georgia,serif; font-size:11px; letter-spacing:.3em; text-transform:uppercase; color:var(--lime-deep);}
+  h2{font-family:'Cinzel',Georgia,serif; font-weight:500; font-size:clamp(24px,5vw,30px); margin:8px 0 0; color:var(--ink);}
+  .wrap{max-width:620px; margin:0 auto; padding:0 24px;}
+  section{padding:64px 0;}
+  .head{text-align:center; margin-bottom:34px;}
+  .rule{width:56px; height:2px; background:var(--lime); margin:16px auto 0;}
+
+  /* hero */
+  .hero{
+    position:relative; min-height:100svh; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; padding:70px 24px 56px; color:var(--hero-text); overflow:hidden;
+    background:linear-gradient(180deg, rgba(63,12,27,.42) 0%, rgba(63,12,27,.80) 45%, rgba(63,12,27,.93) 100%), url(images/hero.jpg) center top / cover no-repeat, var(--wine-deep);
+  }
+  .hero::before{content:""; position:absolute; inset:14px; border:1px solid rgba(207,232,74,.7); pointer-events:none;}
+  .hero::after{content:""; position:absolute; inset:21px; border:1px solid rgba(207,232,74,.28); pointer-events:none;}
+  .hero > *{position:relative; animation:up .9s ease both;}
+  @keyframes up{from{opacity:0; transform:translateY(14px);}to{opacity:1; transform:none;}}
+  .hero .eyebrow{color:var(--lime);}
+  .prog{font-family:'Pinyon Script',cursive; font-size:clamp(54px,15vw,92px); line-height:1; margin:18px 0 4px; color:var(--hero-text);}
+  .sub{font-family:'Cinzel',serif; letter-spacing:.2em; text-transform:uppercase; font-size:clamp(12px,3.2vw,15px); color:var(--lime); margin:0;}
+  .honoring{margin-top:30px; font-style:italic; font-size:18px; opacity:.85;}
+  .grad{font-family:'Cinzel',serif; font-size:clamp(24px,6.5vw,38px); letter-spacing:.08em; margin:6px 0 0;}
+  .lawline{font-family:'Cinzel',serif; font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:var(--lime); margin:10px 0 0;}
+  .when{margin-top:28px; font-family:'Cinzel',serif; letter-spacing:.14em; font-size:13px; text-transform:uppercase;}
+  .when b{color:var(--lime); font-weight:500;}
+
+  .cd{display:flex; gap:12px; justify-content:center; margin-top:30px; flex-wrap:wrap;}
+  .cd div{width:68px; padding:11px 0; border:1px solid rgba(207,232,74,.55); border-radius:4px; background:rgba(0,0,0,.18);}
+  .cd .n{font-family:'Cinzel',serif; font-size:24px; font-weight:600; color:var(--hero-text);}
+  .cd .l{font-family:'Cinzel',serif; font-size:9px; letter-spacing:.14em; color:var(--lime); text-transform:uppercase; margin-top:3px;}
+  .live{display:none; margin-top:30px; font-family:'Cinzel',serif; color:var(--lime); letter-spacing:.1em;}
+  .cue{margin-top:36px; font-family:'Cinzel',serif; font-size:10px; letter-spacing:.28em; color:var(--lime); text-transform:uppercase;}
+
+  /* cards */
+  .grid{display:grid; gap:16px;}
+  @media(min-width:600px){.grid{grid-template-columns:1fr 1fr;} .grid .wide{grid-column:1/-1;}}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:8px; box-shadow:var(--shadow); padding:26px 24px;}
+  .card h3{font-family:'Cinzel',serif; font-weight:500; font-size:15px; letter-spacing:.06em; margin:0 0 6px; color:var(--ink);}
+  .card p{margin:0; font-size:18px; line-height:1.5; color:var(--ink-soft);}
+  .btn{
+    display:inline-block; margin-top:14px; padding:11px 20px; border-radius:3px; border:0; cursor:pointer;
+    background:var(--wine); color:#fbf3e8; text-decoration:none;
+    font-family:'Cinzel',serif; font-size:11px; letter-spacing:.14em; text-transform:uppercase; transition:background .2s, color .2s;
+  }
+  .btn:hover{background:var(--lime); color:var(--wine-deep);}
+  .btn.alt{background:transparent; color:var(--ink); border:1px solid var(--lime-deep); margin-left:8px;}
+  .btn.alt:hover{background:var(--lime); color:var(--wine-deep);}
+  .btns{display:flex; flex-wrap:wrap; gap:8px;} .btns .btn.alt{margin-left:0;}
+
+  /* photo frame */
+  .photo{max-width:300px; margin:0 auto; padding:12px; border:1px solid var(--line); border-radius:6px; background:var(--card); box-shadow:var(--shadow);}
+  .photo .ph{aspect-ratio:4/5; border-radius:3px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
+    background:linear-gradient(160deg,var(--wine) 0%, var(--wine-deep) 100%); color:var(--hero-text); position:relative; overflow:hidden;}
+  .photo .ph::after{content:""; position:absolute; inset:9px; border:1px solid rgba(207,232,74,.5);}
+  .photo .ph img{width:100%; height:100%; object-fit:cover; display:block;}
+  .photo .mono{font-family:'Pinyon Script',cursive; font-size:84px; line-height:1; color:var(--lime);}
+  .photo .nm{font-family:'Cinzel',serif; letter-spacing:.2em; font-size:12px; text-transform:uppercase; margin-top:10px;}
+
+  /* rsvp */
+  .rsvp{text-align:center;}
+  .rsvp .num{
+    display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;
+    padding:16px 18px; margin-top:12px; border:1px solid var(--line); border-radius:6px; background:var(--bg);
+  }
+  .rsvp .num span{font-family:'Cinzel',serif; font-size:19px; letter-spacing:.08em; color:var(--ink);}
+  .rsvp .btn{margin-top:0;}
+
+  footer{text-align:center; padding:44px 24px 56px; background:var(--wine-deep); color:var(--hero-text);}
+  footer .mono{font-family:'Pinyon Script',cursive; font-size:46px; color:var(--lime);}
+  footer p{margin:8px 0 0; font-style:italic; opacity:.85;}
+
+  /* envelope intro */
+  body.locked{overflow:hidden; height:100svh;}
+  #env{position:fixed; inset:0; z-index:9999; display:flex; align-items:center; justify-content:center; perspective:1800px; overflow:hidden;
+    background:radial-gradient(circle at 20% 10%, #7a1d38 0%, transparent 55%), radial-gradient(circle at 85% 90%, #7a1d38 0%, transparent 50%), var(--wine-deep);}
+  #env.gone{display:none;}
+  #env.out{opacity:0; transition:opacity .6s ease;}
+  .envl{position:relative; width:min(84vw,340px); aspect-ratio:3/2; cursor:pointer; -webkit-tap-highlight-color:transparent; border:0; background:none; padding:0; font:inherit;}
+  .envl .back{position:absolute; inset:0; background:#fbf3e8; border-radius:3px; box-shadow:0 14px 40px rgba(0,0,0,.45);}
+  .envl .card2{position:absolute; left:8%; right:8%; top:14%; bottom:6%; z-index:2; background:#fffdf8; border:1px solid #e7d3a4; box-shadow:0 8px 24px rgba(0,0,0,.25);
+    display:flex; align-items:center; justify-content:center; text-align:center; padding:12px; transition:transform 1.1s cubic-bezier(.22,.9,.25,1);}
+  .envl .card2 .t{font-family:'Cinzel',serif; font-size:12px; letter-spacing:.2em; color:var(--wine); text-transform:uppercase;}
+  .envl .card2 .s{display:block; font-family:'Pinyon Script',cursive; font-size:34px; color:var(--lime-deep); line-height:1.1; margin-top:4px; text-transform:none; letter-spacing:0;}
+  .envl .front{position:absolute; inset:0; z-index:3; border-radius:3px; overflow:hidden; pointer-events:none;}
+  .envl .front::before,.envl .front::after{content:""; position:absolute; top:0; bottom:0; width:50%; background:#efe2d3;}
+  .envl .front::before{left:0; clip-path:polygon(0 0,100% 55%,0 100%);}
+  .envl .front::after{right:0; clip-path:polygon(100% 0,0 55%,100% 100%); background:#f3e8da;}
+  .envl .flap{position:absolute; top:0; left:0; right:0; height:55%; z-index:4; background:var(--wine); clip-path:polygon(0 0,100% 0,50% 100%);
+    transform-origin:top center; transition:transform .9s cubic-bezier(.6,.05,.28,1);}
+  .envl .seal{position:absolute; left:50%; top:47%; z-index:5; width:50px; height:50px; transform:translate(-50%,-50%); border-radius:50%;
+    background:var(--lime); color:var(--wine-deep); display:flex; align-items:center; justify-content:center; font-family:'Cinzel',serif; font-weight:600; font-size:14px;
+    box-shadow:0 3px 8px rgba(0,0,0,.35); transition:opacity .35s, transform .35s;}
+  .envl .hint{position:absolute; left:0; right:0; bottom:-46px; text-align:center; font-family:'Cinzel',serif; font-size:10.5px; letter-spacing:.24em; text-transform:uppercase; color:var(--lime); animation:pulse 2.2s ease-in-out infinite;}
+  @keyframes pulse{0%,100%{opacity:.5;}50%{opacity:1;}}
+  #env.open .flap{transform:rotateX(-178deg);}
+  #env.open .seal{opacity:0; transform:translate(-50%,-50%) scale(.4);}
+  #env.open .card2{transform:translateY(-120%);}
+  #env.open .hint{opacity:0;}
+  .mute{position:fixed; right:calc(18px + env(safe-area-inset-right,0px)); bottom:calc(18px + env(safe-area-inset-bottom,0px)); z-index:500; width:44px; height:44px; border-radius:50%;
+    background:var(--card); color:var(--lime-deep); border:1px solid var(--line); box-shadow:var(--shadow); cursor:pointer; display:flex; align-items:center; justify-content:center;}
+  .mute svg{width:18px; height:18px;}
+  .mute:focus-visible{outline:2px solid var(--lime-deep); outline-offset:2px;}
+</style>
+</head>
+<body class="locked">
+<audio id="bg" loop preload="auto" src="song.mp3"></audio>
+<button class="mute" id="mute" aria-label="Turn music on or off" style="display:none">
+  <svg id="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18V6l10-2v12"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg>
+  <svg id="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="display:none"><path d="M9 18V6l10-2v12"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/><line x1="3" y1="3" x2="21" y2="21"/></svg>
+</button>
+
+<div id="env">
+  <button class="envl" id="envl" aria-label="Open the invitation">
+    <div class="back"></div>
+    <div class="card2"><div><span class="t">Res Gestae Soirée</span><span class="s"> Please You're invited</span></div></div>
+    <div class="front"></div>
+    <div class="flap"></div>
+    <div class="seal">MI</div>
+    <div class="hint">Tap to open</div>
+  </button>
+</div>
+
+
+<header class="hero">
+  <span class="eyebrow">You are cordially invited</span>
+  <h1 class="prog">Res Gestae Soirée</h1>
+  <p class="sub">Indiya's Dinner at the Bar</p>
+  <p class="honoring">A graduation dinner in honour of</p>
+  <p class="grad">Mardiya Iddriss</p>
+  <p class="lawline">On her graduation from Law School</p>
+  <p class="when"><b>Saturday</b> · 17 October 2026 · 5pm – 8pm</p>
+
+  <div class="cd" id="cd">
+    <div><div class="n" id="d">00</div><div class="l">Days</div></div>
+    <div><div class="n" id="h">00</div><div class="l">Hours</div></div>
+    <div><div class="n" id="m">00</div><div class="l">Mins</div></div>
+    <div><div class="n" id="s">00</div><div class="l">Secs</div></div>
+  </div>
+  <p class="live" id="live">Tonight's the night ✦</p>
+  <p class="cue">Please  Scroll for details ✦</p>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">The Law Graduate</span><h2>Mardiya Iddriss</h2><div class="rule"></div></div>
+    <div class="photo">
+      <div class="ph">
+        <img src="images/graduate.jpg" alt="Mardiya Iddriss in her law gown and wig">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">Save The Date</span><h2>Event Details</h2><div class="rule"></div></div>
+    <div class="grid">
+      <div class="card"><h3>Date</h3><p>Saturday, 17th October 2026</p></div>
+      <div class="card"><h3>Time</h3><p>5:00 PM – 8:00 PM</p></div>
+      <div class="card wide">
+        <h3>Venue</h3>
+        <p>Pearly Gate Gardens</p>
+        <div class="btns">
+          <a class="btn" href="https://share.google/cKrCKhGVH6wXNRalv" target="_blank" rel="noopener">Open Location in Google Maps</a>
+          <a class="btn alt" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Res%20Gestae%20Soir%C3%A9e%20-%20Mardiya%20Iddriss%27%20Graduation%20Dinner&dates=20261017T170000Z/20261017T200000Z&details=Indiya%27s%20Dinner%20at%20the%20Bar&location=Pearly%20Gate%20Gardens" target="_blank" rel="noopener">Add To Calendar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap rsvp">
+    <div class="head"><span class="eyebrow">Kindly Respond</span><h2>RSVP</h2><div class="rule"></div></div>
+    <div class="card">
+      <p>Please confirm your attendance by calling or messaging on WhatsApp.</p>
+      <div class="num"><span>059-553-2439</span><div class="btns"><a class="btn" href="tel:+233595532439">Call</a><a class="btn alt" href="https://wa.me/233595532439" target="_blank" rel="noopener">WhatsApp</a></div></div>
+      <div class="num"><span>055-523-9536</span><div class="btns"><a class="btn" href="tel:+233555239536">Call</a><a class="btn alt" href="https://wa.me/233555239536" target="_blank" rel="noopener">WhatsApp</a></div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="mono">Res Gestae</div>
+  <p>Dinner, laughter, and a law graduate to celebrate.</p>
+</footer>
+
+<script>
+  (function(){
+    var env=document.getElementById('env'), b=document.getElementById('envl'), done=false;
+    b.addEventListener('click', function(){
+      if(done) return; done=true;
+      env.classList.add('open');
+      var bg=document.getElementById('bg'), mu=document.getElementById('mute');
+      bg.volume=0.7;
+      var pr=bg.play();
+      if(pr && pr.then){ pr.then(function(){ mu.style.display='flex'; }).catch(function(){}); }
+      setTimeout(function(){ env.classList.add('out'); }, 950);
+      setTimeout(function(){ env.classList.add('gone'); document.body.classList.remove('locked'); }, 1550);
+    });
+    document.getElementById('mute').addEventListener('click', function(){
+      var bg=document.getElementById('bg'), on=document.getElementById('on'), off=document.getElementById('off');
+      if(bg.paused){ bg.play(); on.style.display='block'; off.style.display='none'; }
+      else { bg.pause(); on.style.display='none'; off.style.display='block'; }
+    });
+  })();
+
+  // Ghana is UTC+0, so 5:00 PM there = 17:00 UTC for every guest.
+  var target = new Date("2026-10-17T17:00:00+00:00");
+  function p(n){ return String(n).padStart(2,'0'); }
+  function tick(){
+    var diff = target - new Date();
+    if(diff <= 0){ document.getElementById('cd').style.display='none'; document.getElementById('live').style.display='block'; return; }
+    document.getElementById('d').textContent = p(Math.floor(diff/864e5));
+    document.getElementById('h').textContent = p(Math.floor(diff/36e5)%24);
+    document.getElementById('m').textContent = p(Math.floor(diff/6e4)%60);
+    document.getElementById('s').textContent = p(Math.floor(diff/1e3)%60);
+  }
+  tick(); setInterval(tick, 1000);
+</script>
+</body>
+</html>
